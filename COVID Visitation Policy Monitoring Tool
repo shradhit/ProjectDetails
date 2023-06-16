@@ -1,0 +1,33 @@
+
+Title: COVID Visitation Policy Monitoring Tool for Hospitals and Group Practices
+
+Introduction:
+The representatives faced challenges in understanding the visitation changes implemented across hospitals and group practices during the COVID-19 pandemic. Consequently, they struggled to effectively plan their visits to these healthcare facilities. To address this issue, we developed a tool with the broad objective of monitoring and categorizing visitation changes across 5,000 hospitals and approximately 3,000 group practices.
+
+Implementation Steps:
+
+Step 0: Data Collection
+We obtained an online dataset for hospitals, which contained links to their respective websites.
+
+Step 1: Finding the Visitation Page
+To identify the relevant visitation page on each hospital's website, we utilized the Google API. Fuzzy matching algorithms, specifically fuzzy wuzzy, were employed to determine the most suitable visitation page based on search queries.
+
+Step 2: Webpage Scraping and Cleaning
+Using tools like Beautiful Soup and lxml, we scraped the identified webpages and performed data cleaning operations to ensure high-quality and usable data.
+
+Step 3: Webpage Summarization
+We employed the ELMo (Embeddings from Language Models) framework developed by AllenNLP to summarize the content of the webpages. ELMo word vectors, derived from a two-layer bidirectional language model, capture contextual information by considering the complete sentence in which a word appears. This allows us to generate different embeddings for the same word used in different contexts. We evaluated alternative techniques such as BERT, FastText, Word2Vec, GloVe, and assessed their performance using metrics such as BLEU and ROUGE (precision and recall).
+
+Step 4: Categorization
+We developed a classification model to categorize the visitation policies into four categories:
+
+Severe Visitation Restriction: Only the patient is allowed within specific timeslots.
+Moderate Visitation Restriction: The patient is allowed to be accompanied by 1-2 people within specific timeslots.
+No Restriction: The visitation policy does not impose any specific limitations.
+Telehealth: Healthcare services are provided remotely via phone or online communication.
+Key Learnings:
+Throughout the project, we acquired several valuable insights, proficient usage of PySpark, and the conversion of the code to PySpark to optimize the pipeline's runtime from 12-14 hours to less than 3-4 hours. This allowed us to create a streamlined one-click process on the AWS Data Pipeline.
+
+Conclusion:
+By implementing the COVID Visitation Policy Monitoring Tool, we aimed to assist representatives in effectively planning their visits to hospitals and group practices by providing up-to-date information on visitation changes. The tool encompasses steps such as webpage identification, scraping, summarization, and categorization, enabling efficient monitoring of visitation policies across a large number of healthcare facilities.
+
