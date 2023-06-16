@@ -1,0 +1,21 @@
+Title: Audit Report Categorization for Quality Events: Objective and Methodology
+
+Introduction:
+This project aims to categorize audit reports generated during quality events, such as monitoring and inspections. The primary objectives are to save reviewer time and effort, and establish a consistent and standardized approach for assigning categories to these reports. The following steps were undertaken to achieve these goals.
+
+Step 0: Data Acquisition
+We obtained tagged data from the client, which served as the foundation for training our categorization model.
+
+Step 1: Expert Validation and Golden Dataset Creation
+To ensure accuracy, subject matter experts (SMEs) performed a thorough validation of the data. A golden dataset was then created, involving the tagging of sentences at a granular level. This dataset consisted of 200 records and 3,000 sentences, with 1,300 sentences distributed across 20 distinct categories. However, for model training purposes, we focused on 14 categories due to the presence of a minimum threshold of 20 sentences per category.
+
+Step 2: Voice vs Noise Classifier
+To filter out irrelevant information and improve the signal-to-noise ratio, a voice vs noise classifier was implemented. This classifier helped in distinguishing between pertinent and non-pertinent content within the audit reports.
+
+Step 3: Categories Classification
+The core task involved classifying the audit reports into the predefined categories. We optimized the classification model based on recall, which is calculated by dividing the total number of correct predictions by the total number of actual instances with the respective category tagged. The code was made portable and adapted to the client's environment to ensure seamless implementation.
+
+Furthermore, we addressed the challenge of solving a multi-class, multi-label classification problem, as the reports could be assigned multiple categories simultaneously.
+
+Conclusion:
+By implementing a robust methodology, we successfully categorized audit reports generated during quality events. The approach involved expert validation, golden dataset creation, voice vs noise classification, and category classification optimization. This framework not only saves valuable reviewer time and effort but also establishes a consistent and standardized approach to categorizing audit reports.
